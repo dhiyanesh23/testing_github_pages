@@ -5,7 +5,7 @@ body {
   }
   
   header {
-    background-color: rgb(17, 143, 240);
+    background-color: rgb(130, 197, 231);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,7 +39,7 @@ body {
   }
   
   footer {
-    background-color: rgb(252, 25, 25);
+    background-color: rgb(130, 197, 231);
     display: flex;
     justify-content: center;
     align-items: center;
