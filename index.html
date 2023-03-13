@@ -1,63 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Profile</title>
-    <link rel="stylesheet" type="text/css" href="styling.css">
+    <meta charset="UTF-8">
+    <title>School Attendance</title>
+    <link rel="stylesheet" href="styling.css">
   </head>
   <body>
     <header>
-      <h1>Dhiyaneshwaran Nageskumar</h1>
+      <h1>School Attendance</h1>
     </header>
     <main>
-      <section id="about">
-        <h2>About Me</h2>
-        <p>A well organized, goal oriented and challenge seeking student with skill set in python programming and data analysis techniques.</p>
-      </section>
-      <section id="skills">
-        <h2>My Skills</h2>
-        <ul>
-          <li>HTML</li>
-          <li>C++</li>
-          <li>C</li>
-          <li>Python</li>
-        </ul>
-      </section>
-      <section id="projects">
-        <h2>My Projects</h2>
-        <ul>
-          <li>
-            <a href="#">
-              <img src="project-1.jpg" alt="Description of project 1">
-              <h3>Online Proctoring System Using Image Processing and Machine Learning</h3>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="project-2.jpg" alt="Description of project 2">
-              <h3>Tic tac toe android app</h3>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="project-3.jpg" alt="Description of project 3">
-              <h3>Implementation of WLAN</h3>
-            </a>
-          </li>
-        </ul>
-      </section>
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <ul>
-          <li>Email: <a href="mailto:ndhiyanesh233@gmail.com">ndhiyanesh233@gmail.com</a></li>
-          <li>Phone: 7094309294</li>
-          <li>Social media:
-            <ul>
-              <li><a href="https://www.linkedin.com/in/dhiyaneshwaran-nageshkumar/">Dhiyaneshwaran Nageskumar</a></li>
-              <li><a href="https://github.com/dhiyanesh23">Dhiyaneshwaran N</a></li>
-            </ul>
-          </li>
-        </ul>
-      </section>
+      <h2>Enter attendance information:</h2>
+      <form>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+        <label for="class">Class:</label>
+        <select id="class" name="class">
+          <option value="class1">Class 1</option>
+          <option value="class2">Class 2</option>
+          <option value="class3">Class 3</option>
+        </select><br><br>
+        <label for="attendance">Attendance:</label>
+        <input type="radio" id="present" name="attendance" value="present">
+        <label for="present">Present</label>
+        <input type="radio" id="absent" name="attendance" value="absent">
+        <label for="absent">Absent</label><br><br>
+        <button type="submit">Submit</button>
+      </form>
     </main>
+    <footer>
+      <p>&copy; 2023 School Attendance</p>
+    </footer>
   </body>
 </html>
