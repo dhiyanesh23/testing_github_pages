@@ -10,36 +10,43 @@ header {
   padding: 20px;
 }
 
-h1 {
+header h1 {
   margin: 0;
 }
 
-section {
-  padding: 40px;
+main {
+  padding: 20px;
 }
 
-h2 {
-  margin-top: 0;
+form {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 20px;
 }
 
-li {
+input[type="date"],
+select,
+input[type="radio"] {
   margin-bottom: 10px;
 }
 
-a {
-  text-decoration: none;
-  color: #333;
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-a:hover {
-  color: #666;
-}
-
-img {
-  max-width: 100%;
+button[type="submit"]:hover {
+  background-color: #3e8e41;
 }
