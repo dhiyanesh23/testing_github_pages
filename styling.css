@@ -1,18 +1,12 @@
+/* Stylesheet for distance measurements web page */
+
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
 }
 
-h1 {
-  margin-top: 20px;
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-#distance {
-  font-weight: bold;
-}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height
