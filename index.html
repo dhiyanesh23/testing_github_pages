@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>School Attendance</title>
-    <link rel="stylesheet" href="styling.css">
+    <meta charset="UTF-8" />
+    <title>Sensor Readings</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
+
   <body>
-    <header>
-      <h1>School Attendance</h1>
-    </header>
-    <main>
-      <h2>Enter attendance information:</h2>
-      <form>
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date"><br><br>
-        <label for="class">Class:</label>
-        <select id="class" name="class">
-          <option value="class1">Class 1</option>
-          <option value="class2">Class 2</option>
-          <option value="class3">Class 3</option>
-        </select><br><br>
-        <label for="attendance">Attendance:</label>
-        <input type="radio" id="present" name="attendance" value="present">
-        <label for="present">Present</label>
-        <input type="radio" id="absent" name="attendance" value="absent">
-        <label for="absent">Absent</label><br><br>
-        <button type="submit">Submit</button>
-      </form>
-    </main>
-    <footer>
-      <p>&copy; 2023 School Attendance</p>
-    </footer>
+    <h1>Sensor Readings</h1>
+    <table id="sensor-data">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Distance</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      $(function () {
+        var sensorData = $("#sensor-data tbody");
+        var socket = new WebSocket("ws://<your-ip-address>:<port>");
+
+        socket.onmessage = function (event) {
+          var data = JSON.parse(event.data);
+          var timestamp = new Date(data.timestamp).toLocaleString();
+          var distance = data.distance.toFixed(2) + " cm";
+
+          var newRow = $("<tr>");
+          $("<td>").text(timestamp).appendTo(newRow);
+          $("<td>").text(distance).appendTo(newRow);
+          newRow.prependTo(sensorData);
+        };
+      });
+    </script>
   </body>
 </html>
