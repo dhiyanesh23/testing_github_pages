@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ESP8266 Sensor Readings</title>
-  <link rel="stylesheet" href="https://dhiyanesh23.github.io/testing_github_pages/styling.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>ESP8266 Sensor Readings</h1>
-  <p>Distance: <span id="distance"></span> cm</p>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      setInterval(getData, 5000);
-    });
+<h1>Distance Measurements</h1>
 
-    function getData() {
-      $.get("https://dhiyanesh23.github.io/testing_github_pages/sensor-reading.php", function(data) {
-        $("#distance").text(data);
-      });
+<div class="container">
+  <div class="reading">
+    <h2>Distance: <span id="distance"></span></h2>
+  </div>
+</div>
+
+<script>
+setInterval(function() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("distance").innerHTML =
+      this.responseText;
     }
-  </script>
+  };
+  xhttp.open("GET", "distance.txt", true);
+  xhttp.send();
+}, 1000);
+</script>
+
 </body>
 </html>
